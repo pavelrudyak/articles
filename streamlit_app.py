@@ -8,8 +8,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.neighbors import KNeighborsClassifier
 
-
-data = pickle.load(open('data.pickle', "rb"))
+with open('data.pickle', "rb") as file:
+    data = pickle.load(file)
 clf = pickle.load('clf.pickle')
 count_vect = pickle.load('count_vect.pickle')
 tfidf_transformer = pickle.load('tfidf_transformer.pickle')
