@@ -10,9 +10,12 @@ from sklearn.neighbors import KNeighborsClassifier
 
 with open('data.pickle', "rb") as file:
     data = pickle.load(file)
-clf = pickle.load('clf.pickle')
-count_vect = pickle.load('count_vect.pickle')
-tfidf_transformer = pickle.load('tfidf_transformer.pickle')
+with open('clf.pickle', "rb") as file:
+    clf = pickle.load(file)
+with open('count_vect.pickle', "rb") as file:
+    count_vect = pickle.load(file)
+with open('tfidf_transformer.pickle', "rb") as file:
+    tfidf_transformer = pickle.load(file)
 
 st.title('Рекомендация статьи')
 
