@@ -8,8 +8,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.neighbors import KNeighborsClassifier
 
-with open('data.pickle', "rb") as file:
-    data = pickle.load(file)
+'''with open('data.pickle', "rb") as file:
+    data = pickle.load(file)'''
 with open('clf.pickle', "rb") as file:
     clf = pickle.load(file)
 with open('count_vect.pickle', "rb") as file:
@@ -63,14 +63,15 @@ def for_sampling(docs):
       name = closest_articles_indices[pos[0]]
       #name = data[name[0]]
   return name[0]
-
+'''
 def give_link(name):
   return data[name][2]
-
+'''
 
 if st.button("Рекомендовать"):
     # Предобработка введенного пользователем текста
     name = for_sampling(text_input)
-    link = give_link(name)
+    #link = give_link(name)
     # Отображение предсказания
-    st.write(f"Ссылка на статью: {link}")
+    #st.write(f"Ссылка на статью: {link}")
+    st.write(f"Ссылка на статью: {name}")
